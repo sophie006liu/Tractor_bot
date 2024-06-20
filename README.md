@@ -6,7 +6,7 @@ https://github.com/werner-duvaud/muzero-general
 
 ## Game Plan
 
-- [ ] Docker environment setup
+- [ ] Docker environment setup (terrance)
 - [ ] Setup Gym and Tractor environment
 - [ ] Define neural network model
 - [ ] Define RL algorithm (e.g. DQN, PPO, etc.)
