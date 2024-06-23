@@ -4,3 +4,6 @@ RUN apt update
 RUN apt install -y git vim
 RUN pip3 install mypy==1.10.0
 RUN pip3 install gymnasium==0.29.1
+
+# Allow Python import paths to originate from the /workspace dir.
+ENV PYTHONPATH=/workspace

@@ -1,5 +1,5 @@
 import unittest
-import tractor_env
+from tractor.env import tractor_env
 
 class TractorEnvTest(unittest.TestCase):
     def test_initialize(self):

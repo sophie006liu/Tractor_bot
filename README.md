@@ -16,13 +16,13 @@ https://github.com/werner-duvaud/muzero-general
 ### Running Tests
 Simply run any `*_test.py` file.
 ```
-unified_docker$ python3 env/tractor_env_test.py
+unified_docker$ python3 tractor/env/tractor_env_test.py
 ```
 
 ### Running Typing
 Simply run `mypy` on any Python file.
 ```
-unified_docker$ mypy env/tractor_env.py
+unified_docker$ mypy tractor/env/tractor_env.py
 ```
 
 ## Game Plan
