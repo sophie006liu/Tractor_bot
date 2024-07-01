@@ -55,8 +55,6 @@ class TractorEnv(AECEnv):
 
         See https://pettingzoo.farama.org/content/environment_creation/ for details.
         """
-        super().reset(seed=seed)
-
         self.agents = self.possible_agents[:]
         self.rewards = {agent: 0 for agent in self.agents}
         self._cumulative_rewards = {agent: 0 for agent in self.agents}

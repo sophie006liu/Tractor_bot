@@ -1,4 +1,7 @@
+import os
 import ray
+from ray import tune
+from ray.rllib.algorithms.dqn import DQNConfig
 from ray.rllib.env import PettingZooEnv
 from ray.rllib.models import ModelCatalog
 from ray.tune.registry import register_env
@@ -7,7 +10,7 @@ from tractor.env import tractor_env
 
 def main():
     print("Initializing Ray...")
-    ray.init(num_cpus=2, num_gpus=0, object_store_memory=512*1024*1024, local_mode=True)
+    ray.init(num_cpus=2, local_mode=True, logging_level="DEBUG")
 
     # Register model and environment.
     print("Registering model and environment...")
@@ -42,7 +45,7 @@ def main():
             },
             policy_mapping_fn=(lambda agent_id, *args, **kwargs: agent_id),
         )
-        .resources(num_gpus=int(os.environ.get("RLLIB_NUM_GPUS", "0")))
+        .resources(num_cpus_for_main_process=1, num_gpus=int(os.environ.get("RLLIB_NUM_GPUS", "0")))
         .debugging(
             log_level="DEBUG"
         )
