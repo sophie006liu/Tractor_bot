@@ -5,6 +5,8 @@ from gymnasium import spaces
 from pettingzoo import AECEnv
 from pettingzoo.utils import agent_selector
 
+ENV_NAME = "tractor_env"
+
 class TractorEnv(AECEnv):
     """
     Defines the observation space, action space, initialization, and gameplay mechanics for a
