@@ -5,6 +5,8 @@ from gymnasium import spaces
 from pettingzoo import AECEnv
 from pettingzoo.utils import agent_selector
 
+ENV_NAME = "tractor_env"
+
 class TractorEnv(AECEnv):
     """
     Defines the observation space, action space, initialization, and gameplay mechanics for a
@@ -53,8 +55,6 @@ class TractorEnv(AECEnv):
 
         See https://pettingzoo.farama.org/content/environment_creation/ for details.
         """
-        super().reset(seed=seed)
-
         self.agents = self.possible_agents[:]
         self.rewards = {agent: 0 for agent in self.agents}
         self._cumulative_rewards = {agent: 0 for agent in self.agents}
